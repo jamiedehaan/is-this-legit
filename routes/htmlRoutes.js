@@ -27,7 +27,6 @@ module.exports = function(app) {
   
   // test firebase fb login
   app.get("/", function(req, res) {
-    console.log("user: cara");
     res.render("index", req.body);
   })
 
