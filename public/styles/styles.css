@@ -1,0 +1,87 @@
+.btn {
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  width: 100%;
+}
+
+.form-group {
+  color: black;
+} 
+
+h1, h5, p {
+  color: black;
+}
+
+.jumbotron {
+  color: black;
+  opacity: 0.70;
+}
+
+.nav-item {
+  color: black;
+} 
+
+#resultsCard {
+  height: 55vh;
+  position: relative;
+  right: -30%;
+  
+}
+
+#textCard {
+  position: absolute;
+  width: 40%;
+}
+
+.wrapper {
+  height: 100vh;
+  perspective: 2px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: white;
+}
+
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15%;
+}
+
+.parallax::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  z-index: -1;
+}
+
+.static {
+  background-image: url("/images/static.jpg")
+}
+
+.bg1::after {
+  background-image: url("/images/background.jpg")
+}
+
+.bg2::after {
+  background-image: url("/images/background.jpg")
+}
+
+/* .sign-in {
+ width: 200px;
+} */
+
+.google {
+  width: 20px;
+  vertical-align: middle;
+ }
