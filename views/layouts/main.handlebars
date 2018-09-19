@@ -2,57 +2,53 @@
 <html>
 
 <head>
-    <title>I Call Bullshit!</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+  <title>Is This Legit?</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+
 </head>
 
 <body>
   {{{body}}}
-
-  <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/ui/3.4.1/firebase-ui-auth__en.js"></script>
-  <script src="js/firebase-off.js"></script>
-  <script src="js/index.js"></script>
-
-  {{!-- this script here so all handlebars files can use it --}}
   <script>
-
     $(document).ready(function () {
-        $('.button').on('click', function (event) {
-            if (this.hash !== "") {
-                event.preventDefault();
-                var hash = this.hash;
-                $('html, main').animate({
-                    scrollTop: $(hash).offset().top
-                }, 2000, function () {
-                    window.location.hash = hash;
-                });
-            }
-        });
+      $('.button').on('click', function (event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, main').animate({
+            scrollTop: $(hash).offset().top
+          }, 2000, function () {
+            window.location.hash = hash;
+          });
+        }
+      });
     });
 
     $(document).ready(function () {
-        $('#button1').on('click', function (event) {
-            if (this.hash !== "") {
-                event.preventDefault();
-                var hash = this.hash;
-                $('html, main').animate({
-                    scrollTop: $(hash).offset().top
-                }, 2000, function () {
-                    window.location.hash = hash;
-                });
-            }
-        });
+      $('#button1').on('click', function (event) {
+        if (this.hash !== "") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, main').animate({
+            scrollTop: $(hash).offset().top
+          }, 2000, function () {
+            window.location.hash = hash;
+          });
+        }
+      });
     });
-
-</script>
+  </script>
 </body>
 
 </html>

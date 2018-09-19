@@ -2,18 +2,19 @@
   "development": {
     "username": "root",
     "password": "root",
-    "database": "saved_db",
-    "host": "localhost",
-    "port": 8889,
-    "dialect": "mysql"
+    "database": "test_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "port": 8889
   },
   "test": {
     "username": "root",
     "password": "root",
-    "database": "testdb",
-    "host": "localhost",
+    "database": "test_db",
+    "host": "127.0.0.1",
     "dialect": "mysql",
-    "logging": false
+    "logging": false,
+    "port": 8889
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",

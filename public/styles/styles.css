@@ -1,3 +1,7 @@
+body {
+  font-family: 'Dosis', sans-serif;
+}
+
 .btn {
   color: white;
 }
@@ -18,6 +22,7 @@ h1, h5, p {
 .jumbotron {
   color: black;
   opacity: 0.70;
+  width: 80%;
 }
 
 .nav-item {
@@ -28,7 +33,6 @@ h1, h5, p {
   height: 55vh;
   position: relative;
   right: -30%;
-  
 }
 
 #textCard {
@@ -61,22 +65,39 @@ h1, h5, p {
   bottom: 0;
   left: 0;
   transform: translateZ(-1px) scale(1.5);
-  background-size: 100%;
+  background-size: 130%;
   z-index: -1;
 }
 
 .static {
-  background-image: url("/images/static.jpg")
+  background-image: url("/images/static.jpg");
 }
 
 .bg1::after {
-  background-image: url("/images/background.jpg")
+  background-image: url("/images/background.jpg");
 }
 
 .bg2::after {
-  background-image: url("/images/background.jpg")
+  background-image: url("/images/background.jpg");
 }
 
-.signed-in, .signed-in:hover {
-  color: green;
+/* .sign-in {
+ width: 200px;
+} */
+
+.google {
+  width: 20px;
+  vertical-align: middle;
+}
+
+@media only screen and (max-width: 768px) {
+  .parallax::after {
+     background-size: 160%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .parallax::after  {
+    background-size: 200%;
+  }
 }
