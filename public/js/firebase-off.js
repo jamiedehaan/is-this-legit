@@ -35,14 +35,13 @@ var currentUser;
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      $(".signed-in").html("<img src='images/google-small.svg' alt='Google icon'> Signed in as <strong>" + user.displayName + "<strong>");
+      $("#signed-in").html("<img src='images/google-small.svg' alt='Google icon'> Signed in as <strong>" + user.displayName + "<strong>");
       currentUser = user;
     //   console.log(user);
     } else {
       // No user is signed in.
     }
 });
-console.log("current user ", currentUser);
 
 // To get the currently signed-in user by using the currentUser property. If a user isn't signed in, currentUser is null.
 var user = firebase.auth().currentUser;
