@@ -42,7 +42,6 @@ firebase.auth().onAuthStateChanged(function(user) {
       // No user is signed in.
     }
 });
-console.log("current user ", currentUser);
 
 // To get the currently signed-in user by using the currentUser property. If a user isn't signed in, currentUser is null.
 var user = firebase.auth().currentUser;
