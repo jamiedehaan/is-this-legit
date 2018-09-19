@@ -35,7 +35,7 @@ var currentUser;
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
-      $(".signed-in").html("<img src='images/google-small.svg' alt='Google icon'> Signed in as <strong>" + user.displayName + "<strong>");
+      $("#signed-in").html("<img src='images/google-small.svg' alt='Google icon'> Signed in as <strong>" + user.displayName + "<strong>");
       currentUser = user;
     //   console.log(user);
     } else {
