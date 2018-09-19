@@ -10,8 +10,7 @@
                     <a href="#archive" id="button1" class="nav-link ">Archive</a>
                 </li>
                 <li class="nav-item sign-in">
-                    {{!-- <img class="google" src="images/google-icon.png" alt="Google icon" /> --}}
-                    <p class="nav-link"><span id="signed-in">Signed In As:</span></p>
+                    <p class="nav-link"><span id="signed-in"></span></p>
                 </li>
             </ul>
         </div>
@@ -31,6 +30,21 @@
             </p>
         </div>
     </div>
+    </section>
+    <section id="form" class="section parallax static">
+
+        <div class="card" id="textCard">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <label for="text">Enter Text Here</label>
+                        <textarea class="form-control" id="text" rows="10"></textarea>
+                        <br>
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
     <div class="card" id="resultsCard">
         <div class="card-body">
@@ -40,12 +54,11 @@
             <p>Sentiment Analysis: <span id="sentiment"></span></p>
             <p>Subjective Analysis: <span id="subjective"></span></p>
             <p>Top Classification: <span id="top"></span></p>
+        <button class="saveds">save</button>
         </div>
     </div>
 
 </section>
-
-<button class="saveds">save</button>
 
     <section id="archive" class="section parallax bg2">
         <h1>ARCHIVE HERE</h1>
@@ -58,3 +71,4 @@
     </footer>
 
 </main>
+
