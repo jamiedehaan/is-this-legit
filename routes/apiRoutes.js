@@ -16,6 +16,7 @@ module.exports = function(app) {
   app.post("/api/saveds", function(req, res) {
     db.create(req.body).then(function(dbSaved) {
       res.json(dbSaved);
+      console.log(dbSaved);
     });
   });
 
