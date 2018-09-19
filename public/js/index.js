@@ -1,3 +1,6 @@
+// var user = require("js/firebase-off.js");
+// console.log("user from index.js", user);
+
 $(function() {
   
   $("#text").on("click", function(event) {
@@ -11,7 +14,8 @@ $(function() {
     })
   });
 
-  $(".saveds").on("click", function(event) {
+  // TEST WHEN WE HAVE A "SAVE" BUTTON
+  $(".save").on("click", function(event) {
     event.preventDefault();
   
     var newSaved = {
@@ -20,8 +24,11 @@ $(function() {
       sentiment: $("#sentiment").val().trim(),
       commercial: $("#commercial").val().trim(),
       topic: $("#topic").val().trim(),
-      adult: $("#adult").val().trim()
+      adult: $("#adult").val().trim(),
+      user_id: currentUser.uid
     }
+
+    console.log("newSaved: ", newSaved)
   
     $.ajax("/api/saveds", {
       type: "POST",
@@ -30,7 +37,7 @@ $(function() {
       function() {
           console.log("Added new saved article");
           // reload page to get updated list
-          location.reload();
+          // location.reload();
       }
     );  
   });

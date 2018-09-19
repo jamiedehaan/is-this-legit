@@ -19,6 +19,40 @@
   <script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/ui/3.4.1/firebase-ui-auth__en.js"></script>
   <script src="js/firebase-off.js"></script>
+  <script src="js/index.js"></script>
+
+  {{!-- this script here so all handlebars files can use it --}}
+  <script>
+
+    $(document).ready(function () {
+        $('.button').on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, main').animate({
+                    scrollTop: $(hash).offset().top
+                }, 2000, function () {
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('#button1').on('click', function (event) {
+            if (this.hash !== "") {
+                event.preventDefault();
+                var hash = this.hash;
+                $('html, main').animate({
+                    scrollTop: $(hash).offset().top
+                }, 2000, function () {
+                    window.location.hash = hash;
+                });
+            }
+        });
+    });
+
+</script>
 </body>
 
 </html>

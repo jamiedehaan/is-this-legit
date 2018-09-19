@@ -30,23 +30,25 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
     // ...
 });
 
+var currentUser;
 // To get current user, set an observer on the Auth object
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
       $(".signed-in").html("<img src='images/google-small.svg' alt='Google icon'> Signed in as <strong>" + user.displayName + "<strong>");
-      console.log(user);
+      currentUser = user;
+    //   console.log(user);
     } else {
       // No user is signed in.
     }
 });
+console.log("current user ", currentUser);
 
 // To get the currently signed-in user by using the currentUser property. If a user isn't signed in, currentUser is null.
 var user = firebase.auth().currentUser;
 
 if (user) {
     // User is signed in.
-    $(".signed-in").text("<strong>Signed In</strong>");
 } else {
     // No user is signed in.
 }
