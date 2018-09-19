@@ -39,7 +39,7 @@ module.exports = function(app) {
   //
   // textToCheck = string of user input in textarea
   app.post("/api/results", function(req, res) {
-    var textToCheck = '';
+    var textToCheck = req.body.data;
     var serviceValues = ['SubjectivityAnalysis', 'SentimentAnalysis', 'TopicClassification', 'AdultContentDetection', 'CommercialDetection'];
     datum.parallel(textToCheck, serviceValues,
       function(err, results) {

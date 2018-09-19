@@ -2,7 +2,7 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Load index page
-  app.get("/", function(req, res) {
+  app.get("/index", function(req, res) {
     db.saved.findAll({}).then(function(dbsaveds) {
       res.render("index", {
         msg: "Welcome!",
