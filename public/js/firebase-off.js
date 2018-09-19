@@ -34,6 +34,8 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       // User is signed in.
+      $(".signed-in").text("Signed in as " + user.displayName);
+      console.log(user);
     } else {
       // No user is signed in.
     }
@@ -44,6 +46,7 @@ var user = firebase.auth().currentUser;
 
 if (user) {
     // User is signed in.
+    $(".signed-in").text("<strong>Signed In</strong>");
 } else {
     // No user is signed in.
 }

@@ -1,65 +1,63 @@
 <main class="wrapper">
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <ul class="navbar-nav mr-auto">
-               <li class="nav-item">
-                   <a href="#form" class="nav-link button">Form</a>
-               </li>
-               <li class="nav-item">
-                   <a href="#archive" id="button1" class="nav-link ">Archive</a>
-               </li>
-               <li class="nav-item sign-in">
-                   {{!-- <img class="google" src="images/google-icon.png" alt="Google icon"/> --}}
-                   <p class="nav-link"><span id="signed-in">Signed In As:</span></p>
-               </li>
-           </ul>
-       </div>
-   </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a href="#form" class="nav-link button">Form</a>
+            </li>
+            <li class="nav-item">
+                <a href="#archive" id="button1" class="nav-link">Archive</a>
+            </li>
+            <li class="nav-item sign-in">
+                {{!-- <img class="google" src="images/google-icon.png" alt="Google icon"/> --}}
+                <p class="nav-link"><span class="signed-in"></span></p>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-    <section class="section parallax bg1">
+<section class="section parallax bg1">
+    <div class="jumbotron">
+        <h1 class="display-4">I Call Bullshit!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
+            to
+            featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <p class="lead">
+            <a href="#form" class="btn btn-secondary btn-lg button" role="button">Learn more</a>
+        </p>
+    </div>
+</section>
 
-        <div class="jumbotron">
-            <h1 class="display-4">I Call Bullshit!</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention
-                to
-                featured content or information.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <p class="lead">
-                <a href="#form" class="btn btn-secondary btn-lg button" role="button">Learn more</a>
-            </p>
+<section class="section static" id="form">
+
+    <div class="card" id="textCard">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label for="text">Enter Text Here</label>
+                    <textarea class="form-control" id="text" rows="10"></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-secondary">Submit</button>
+                </div>
+            </form>
         </div>
+    </div>
 
-    </section>
-
-    <section class="section static" id="form">
-
-        <div class="card" id="textCard">
-            <div class="card-body">
-                <form>
-                    <div class="form-group">
-                        <label for="text">Enter Text Here</label>
-                        <textarea class="form-control" id="text" rows="10"></textarea>
-                        <br>
-                        <button type="submit" class="btn btn-secondary">Submit</button>
-                    </div>
-                </form>
-            </div>
+    <div class="card" id="resultsCard">
+        <div class="card-body">
+            <h5>Results:</h5>
+            <p>Adult Content Detection: <span id="adult"></span></p>
+            <p>Commercial Detection: <span id="commercial"></span></p>
+            <p>Sentiment Analysis: <span id="sentiment"></span></p>
+            <p>Subjective Analysis: <span id="subjective"></span></p>
+            <p>Top Classification: <span id="top"></span></p>
         </div>
+    </div>
 
-        <div class="card" id="resultsCard">
-            <div class="card-body">
-                <h5>Results:</h5>
-                <p>Adult Content Detection: <span id="adult"></span></p>
-                <p>Commercial Detection: <span id="commercial"></span></p>
-                <p>Sentiment Analysis: <span id="sentiment"></span></p>
-                <p>Subjective Analysis: <span id="subjective"></span></p>
-                <p>Top Classification: <span id="top"></span></p>
-            </div>
-        </div>
-
-    </section>
+</section>
 
     <section id="archive" class="section parallax bg2">
         <h1>DATABASE HERE</h1>
@@ -105,6 +103,6 @@
 
 </script>
 
-
-
-Colla
+<script src="https://www.gstatic.com/firebasejs/5.5.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/ui/3.4.1/firebase-ui-auth__en.js"></script>
+<script src="js/firebase-off.js"></script>

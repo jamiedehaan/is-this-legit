@@ -77,11 +77,6 @@ h1, h5, p {
   background-image: url("/images/background.jpg")
 }
 
-/* .sign-in {
- width: 200px;
-} */
-
-.google {
-  width: 20px;
-  vertical-align: middle;
- }
+.signed-in, .signed-in:hover {
+  color: green;
+}
