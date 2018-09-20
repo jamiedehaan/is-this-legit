@@ -1,3 +1,17 @@
+#a {
+  min-width: 100%;
+  text-align: center;
+  width: 100%;
+}
+
+.archive {
+  width: 60%;
+}
+
+#archive {
+  flex-wrap: wrap;
+}
+
 body {
   font-family: 'Dosis', sans-serif;
 }
@@ -6,7 +20,12 @@ body {
   color: white;
 }
 
+.face {
+  font-size: 30pt;
+}
+
 .footer {
+  min-width: 100%;
   text-align: center;
   width: 100%;
 }
@@ -17,6 +36,11 @@ body {
 
 h1, h5, p {
   color: black;
+}
+
+#insight, #title {
+  height: 110px;
+  overflow: scroll;
 }
 
 .jumbotron {
@@ -30,13 +54,20 @@ h1, h5, p {
 } 
 
 #resultsCard {
+  display: inline-block;
   height: 55vh;
-  position: relative;
-  right: -30%;
+}
+
+#surprise {
+  bottom: -350vh;
+  position: fixed;
+  text-align: center;
+  width: 100%;
 }
 
 #textCard {
-  position: absolute;
+  display: inline-block;
+  margin-right: 5%;
   width: 40%;
 }
 
@@ -65,7 +96,7 @@ h1, h5, p {
   bottom: 0;
   left: 0;
   transform: translateZ(-1px) scale(1.5);
-  background-size: 130%;
+  background-size: 100%;
   z-index: -1;
 }
 

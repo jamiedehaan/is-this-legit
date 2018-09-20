@@ -16,7 +16,7 @@ module.exports = function(app) {
   app.post("/api/saveds", function(req, res) {
     db.create(req.body).then(function(dbSaved) {
       res.json(dbSaved);
-      console.log(dbSaved);
+      console.log("saved"+dbSaved);
     });
   });
 
@@ -39,17 +39,40 @@ module.exports = function(app) {
   //
   // textToCheck = string of user input in textarea
   app.post("/api/results", function(req, res) {
-    var textToCheck = req.body.data;
+    console.log('posting...');
+    console.log(req.body.text);
+    var textToCheck = req.body.text;
     var serviceValues = ['SubjectivityAnalysis', 'SentimentAnalysis', 'TopicClassification', 'AdultContentDetection', 'CommercialDetection'];
     datum.parallel(textToCheck, serviceValues,
       function(err, results) {
         if (err) return console.error(err);
-        // return results array matching serviceValues array
+        // console.log(results);
+        // var results = {
+        //   sub : results[0],
+        //   senti : results[1],
+        //   topic : results[2],
+        //   adult : results[3],
+        //   comm : results[4]
+        // };
+
+        // console.log(req.results);
+        // console.log('testing');
         res.json(results);
+        //res.render('index', req.resuts);
+        // return results array matching serviceValues array
+        // res.render("index", results);
+        //res.render('index', {name: 'hey there'});
+
+        // res.render('index', function(err, results) {
+        //   res.send(results);
+        // });
+
+        //res.redirect('/');
+        // res.status(200).end();
+
         //JACOB: changed this from return(results)
         //recieves response array from datum CHECK
-      }
-    );
-  })
+      }); 
+  });
   
-};
+}
