@@ -39,8 +39,8 @@ h1, h5, p {
 }
 
 #insight, #title {
-  height: 50px;
-  overflow: hidden;
+  height: 110px;
+  overflow: scroll;
 }
 
 .jumbotron {

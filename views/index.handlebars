@@ -20,7 +20,7 @@
 
         <div class="jumbotron">
             <h1 class="animated bounceInDown">Is this legit?</h1>
-            <i class="animated bounceInDown em em-thinking_face face"></i>
+             <i class="animated bounceInDown em em-thinking_face face"></i>
             <p class="lead">
                 The internet is awash with misleading articles and information. We have all sat there wondering if the
                 web page you're reading is indeed legitimate and therefore trustworthy. Wouldn't it be nice to know the
@@ -45,24 +45,24 @@
                         <label for="text">Enter Text Here</label>
                         <textarea class="form-control" id="text" rows="10"></textarea>
                         <br>
-                        <button type="submit" id="submit" class="btn btn-secondary">Submit</button>
+                        <button id="submit" type="submit" class="btn btn-secondary">Submit</button>
                     </div>
                 </form>
             </div>
         </div>
 
-        <div class="card" id="resultsCard">
+       <div class="card" id="resultsCard">
             <div class="card-body">
                 <h5>Results:</h5>
-                <p>Adult Content Detection: <span id="sub">{{sub}}</span></p>
+                <p>Adult Content Detection: <span id="adult">{{adult}}</span></p>
                 <p>Commercial Detection: <span id="comm">{{comm}}</span></p>
                 <p>Sentiment Analysis: <span id="senti">{{senti}}</span></p>
-                <p>Subjective Analysis: <span id="adult">{{adult}}</span></p>
-                <p>Top Classification:<span id="topic">{{topic}}</span></p>
+                <p>Subjective Analysis: <span id="sub">{{sub}}</span></p>
+                <p>Top Classification: <span id="topic">{{topic}}</span></p>
                 <form>
                     <div class="form-group">
                         <label for="titleName">Title:</label>
-                        <textarea class="form-control" id="text" rows="1"></textarea>
+                        <textarea class="form-control" id="titleName" rows="1"></textarea>
                         <br>
                         <button id="saveds" class="btn btn-secondary saveds">Save</button>
                     </div>
@@ -76,13 +76,15 @@
 
         <h1 id="a">Archive</h1>
         <div class="card archive">
+            {{#each saveds}}
             <div class="card-body">
-                <h5 id="title"></h5>
-                <br>
-                <p id="insight"></p>
-                <br>
-                <button type="delete" class="btn btn-secondary">Delete</button>
+                <h5><span id="title">{{this.article_name}}</span></h5>
+                <p><span class="datum">{{this.topic}}, {{this.subjectivity}}, {{this.sentiment}}, {{this.commercial}}, {{this.adult}}</span></p>
+                <p id="insight">{{this.text}}</p>
+                
+                <button type="delete"  class="delete btn btn-secondary" data-id="{{id}}">Delete</button>
             </div>
+            {{/each}}
         </div>
 
         <footer class="footer">

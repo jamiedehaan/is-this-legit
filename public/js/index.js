@@ -2,30 +2,59 @@
 // console.log("user from index.js", user);
 
 $(function() {
-  
-  $("#text").on("click", function(event) {
+
+  $(".delete").on("click", function(event) {
     event.preventDefault();
+    var id = $(this).data(id);
+console.log(id);
+    $.ajax("api/saveds/" + id.id, {
+      type : "DELETE",
+    })
+    .then(function() {
+      location.reload()
+    })
+  });
+  
+  $("#submit").on("click", function(event) {
+    event.preventDefault();
+
+    var data =  {
+      text: $("#text").val().trim()
+    }
+    console.log('working...');
+    console.log(data.text);
     
     $.ajax("/api/results", {
       type : "POST",
-      data : $("#text").val().trim(),
+      data : data,
     }).then(function(res) {
-      res.send("/index", res.body)
+      //console.log(res);
+      //location.reload();
+      $("#sub").text(res[0]);
+      $("#senti").text(res[1]);
+      $("#topic").text(res[2]);
+      $("#adult").text(res[3]);
+      $("#comm").text(res[4])
+
+      // window.location = '/';
+      console.log("success");
+      console.log(res);
     })
   });
 
   // TEST WHEN WE HAVE A "SAVE" BUTTON
-  $(".save").on("click", function(event) {
+  $(".saveds").on("click", function(event) {
     event.preventDefault();
   
     var newSaved = {
-      article_name: $("#article-name").val().trim(),
-      subjectivity: $("#subjectivity").val().trim(),
-      sentiment: $("#sentiment").val().trim(),
-      commercial: $("#commercial").val().trim(),
-      topic: $("#topic").val().trim(),
-      adult: $("#adult").val().trim(),
-      user_id: currentUser.uid
+      article_name : $("#titleName").val().trim(),
+      subjectivity : $("#sub").text(),
+      sentiment : $("#senti").text(),
+      commercial : $("#comm").text(),
+      topic : $("#topic").text(),
+      adult : $("#adult").text(),
+      text : $("#text").val().trim(),
+      user_id : currentUser.uid
     }
 
     console.log("newSaved: ", newSaved)
@@ -37,7 +66,7 @@ $(function() {
       function() {
           console.log("Added new saved article");
           // reload page to get updated list
-          // location.reload();
+          location.reload();
       }
     );  
   });
